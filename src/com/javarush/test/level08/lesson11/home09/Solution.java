@@ -1,11 +1,9 @@
 package com.javarush.test.level08.lesson11.home09;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 
 import static java.time.temporal.TemporalAdjusters.firstDayOfYear;
 
@@ -21,26 +19,29 @@ public class Solution
 {
     public static void main(String[] args)
     {
-        System.out.println(isDateOdd("test"));
+        System.out.println("January 11 2018 = " + isDateOdd("January 11 2018"));
 
     }
 
-    public static boolean isDateOdd(String date)
-    {
+    public static boolean isDateOdd(String date){
         LocalDate now = LocalDate.now();
         LocalDate firstDayOfYear = now.with(firstDayOfYear());
-        String [] dateFromUser = date.split(" ");
-        Date date1 = null;
-        DateFormat dateFormat = DateFormat.getDateInstance();
 
-        String testDate = "JANUARY 1 2000";
-        try {
-            date1 = dateFormat.parse(testDate);
-            System.out.println(date1);
-        } catch (ParseException e) {
-            System.out.println(e);
+        String testDate = "January 11 2018";
+//        DateFormat simpleDateFormat = new SimpleDateFormat("MMMM d yyyy", Locale.ENGLISH);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM d yyyy", Locale.ENGLISH);
+        //            Date date1 = simpleDateFormat.parse(testDate);
+        LocalDate localDate = LocalDate.parse(date, dateTimeFormatter);
 
+        long days = ChronoUnit.DAYS.between(firstDayOfYear, localDate);
+        System.out.println(days);
+
+        if (days%2 == 0) {
+            System.out.println("Parzyste");
+            return true;
+        } else {
+            System.out.println("Nie parzyste");
+            return false;
         }
-        return true;
     }
 }
