@@ -1,13 +1,6 @@
 package com.javarush.test.level08.lesson11.home09;
 
-import javax.xml.crypto.Data;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
-import java.util.Locale;
-
-import static java.time.temporal.TemporalAdjusters.firstDayOfYear;
 
 /* Working with date
 1. Implement the method isDateOdd(String date) so that it returns true, if the number of days from the beginning of the year is odd, otherwise it returns false.
@@ -23,7 +16,7 @@ public class Solution
     {
         System.out.println("JANUARY 1 2000 = " + isDateOdd("JANUARY 1 2000"));
         System.out.println("JANUARY 2 2020 = " + isDateOdd("JANUARY 2 2020"));
-        System.out.println("MAY 1 2013 = " + isDateOdd("MAY 1 2013"));
+//        System.out.println("MAY 1 2013 = " + isDateOdd("MAY 1 2013"));
 
     }
 
