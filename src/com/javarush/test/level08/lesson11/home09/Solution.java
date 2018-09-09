@@ -19,7 +19,9 @@ public class Solution
 {
     public static void main(String[] args)
     {
-        System.out.println("January 11 2018 = " + isDateOdd("January 11 2018"));
+        System.out.println("JANUARY 1 2000 = " + isDateOdd("JANUARY 1 2000"));
+        System.out.println("JANUARY 2 2020 = " + isDateOdd("JANUARY 2 2020"));
+        System.out.println("MAY 1 2013 = " + isDateOdd("MAY 1 2013"));
 
     }
 
@@ -27,21 +29,25 @@ public class Solution
         LocalDate now = LocalDate.now();
         LocalDate firstDayOfYear = now.with(firstDayOfYear());
 
-        String testDate = "January 11 2018";
-//        DateFormat simpleDateFormat = new SimpleDateFormat("MMMM d yyyy", Locale.ENGLISH);
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM d yyyy", Locale.ENGLISH);
-        //            Date date1 = simpleDateFormat.parse(testDate);
-        LocalDate localDate = LocalDate.parse(date, dateTimeFormatter);
+        LocalDate localDate = LocalDate.parse(convertToLower(date), dateTimeFormatter);
 
         long days = ChronoUnit.DAYS.between(firstDayOfYear, localDate);
-        System.out.println(days);
 
         if (days%2 == 0) {
-            System.out.println("Parzyste");
             return true;
         } else {
-            System.out.println("Nie parzyste");
             return false;
         }
+    }
+
+    public static String convertToLower(String string) {
+        char [] words = string.toCharArray();
+        words[0] = Character.toUpperCase(words[0]);
+        for (int i = 1; i < words.length; i++) {
+            words[i] = Character.toLowerCase(words[i]);
+            if(words[i] == ' ') { break; }
+        }
+        return String.valueOf(words);
     }
 }
