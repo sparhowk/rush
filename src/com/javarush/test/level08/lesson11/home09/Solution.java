@@ -1,8 +1,10 @@
 package com.javarush.test.level08.lesson11.home09;
 
+import javax.xml.crypto.Data;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.Locale;
 
 import static java.time.temporal.TemporalAdjusters.firstDayOfYear;
@@ -26,28 +28,21 @@ public class Solution
     }
 
     public static boolean isDateOdd(String date){
-        LocalDate now = LocalDate.now();
-        LocalDate firstDayOfYear = now.with(firstDayOfYear());
+        Date dateFromUser = new Date(date);
+        Date startDateFromUser = new Date(date);
+        startDateFromUser.setHours(0);
+        startDateFromUser.setMinutes(0);
+        startDateFromUser.setSeconds(0);
+        startDateFromUser.setDate(1);
+        startDateFromUser.setMonth(0);
+        long caluclateDate = dateFromUser.getTime() - startDateFromUser.getTime();
+        long caluclateMS = 1000 * 60 * 60 * 24;
+        int calulateDays = (int) (caluclateDate / caluclateMS);
 
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM d yyyy", Locale.ENGLISH);
-        LocalDate localDate = LocalDate.parse(convertToLower(date), dateTimeFormatter);
-
-        long days = ChronoUnit.DAYS.between(firstDayOfYear, localDate);
-
-        if (days%2 == 0) {
+        if (calulateDays%2 == 0) {
             return true;
         } else {
             return false;
         }
-    }
-
-    public static String convertToLower(String string) {
-        char [] words = string.toCharArray();
-        words[0] = Character.toUpperCase(words[0]);
-        for (int i = 1; i < words.length; i++) {
-            words[i] = Character.toLowerCase(words[i]);
-            if(words[i] == ' ') { break; }
-        }
-        return String.valueOf(words);
     }
 }
