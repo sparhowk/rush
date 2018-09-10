@@ -17,6 +17,8 @@ public class Solution
     public static void main(String[] args) throws IOException
     {
         //add your code here
+        BufferedReader  reader = new BufferedReader(new InputStreamReader(System.in));
+        String month = reader.readLine();
     }
 
 }
