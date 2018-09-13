@@ -18,9 +18,11 @@ public class Solution {
 
     public static void main(String[] args) {
         // add your code here
-        hood.ate.add(patty);
+        grandmother.ate.add(patty);
+
         wolf.ate.add(grandmother);
-        wolf.ate.add(patty);
+        wolf.ate.add(hood);
+
         woodman.killed.add(wolf);
     }
 
