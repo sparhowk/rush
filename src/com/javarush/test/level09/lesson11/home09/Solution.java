@@ -1,9 +1,6 @@
 package com.javarush.test.level09.lesson11.home09;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /* Ten cats
 Create a class Cat with a field String name.
@@ -23,11 +20,23 @@ public class Solution
     public static Map<String, Cat> createMap()
     {
         //add your code here
+        Map<String, Cat> cats = new HashMap<String, Cat>();
+        String nameCat;
+        for (int i = 0; i < 10; i++) {
+            nameCat = "Cats0" +i;
+            cats.put(nameCat, new Cat(nameCat));
+        }
+        return cats;
     }
 
     public static Set<Cat> convertMapToSet(Map<String, Cat> map)
     {
         //add your code here
+        Set<Cat> valuesCatSet = new HashSet<Cat>();
+        for (Map.Entry<String, Cat> names: map.entrySet()) {
+            valuesCatSet.add(names.getValue());
+        }
+        return valuesCatSet;
     }
 
     public static void printCatSet(Set<Cat> set)
@@ -49,7 +58,7 @@ public class Solution
 
         public String toString()
         {
-            return "Cat "+this.name;
+            return "Cat " + this.name;
         }
     }
 
