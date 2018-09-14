@@ -14,11 +14,13 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
         //add your code here
+        try {
 
-        ArrayList<String> list = new ArrayList<String>();
-        String s = list.get(18);
-
-        //add your code here
-
+            ArrayList<String> list = new ArrayList<String>();
+            String s = list.get(18);
+        } catch (Exception e) {
+            //add your code here
+            System.out.println(e);
+        }
     }
 }

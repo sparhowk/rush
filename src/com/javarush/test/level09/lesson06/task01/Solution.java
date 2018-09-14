@@ -10,11 +10,10 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        //add your code here
-
-         int a = 42/0;
-
-        //add your code here
-
+        try {
+            int a = 42/0;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

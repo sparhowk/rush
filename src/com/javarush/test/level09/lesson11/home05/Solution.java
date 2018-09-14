@@ -22,6 +22,23 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
         //add your code here
+        String vowels = vowels = new String();
+        String consonants = new String();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String textFromUser = reader.readLine();
+
+        for (int i = 0; i < textFromUser.length(); i++) {
+            if (textFromUser.charAt(i) == ' ') {
+                continue;
+            }
+            else if (isVowel(textFromUser.charAt(i)))
+            {
+                vowels += textFromUser.charAt(i) + " ";
+            } else
+                consonants += textFromUser.charAt(i) + " ";
+        }
+        System.out.println(vowels.trim());
+        System.out.println(consonants.trim());
     }
 
 

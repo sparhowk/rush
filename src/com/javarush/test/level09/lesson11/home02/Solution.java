@@ -14,6 +14,12 @@ public class Solution
             System.out.println(i);
 
             //add your code here
+            try {
+                Thread.sleep(100);
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 }

@@ -23,6 +23,9 @@ public class Solution
     public static Map<String, Cat> createMap()
     {
         //add your code here
+        HashMap<String, Cat> cats = new HashMap<String, Cat>();
+
+
     }
 
     public static Set<Cat> convertMapToSet(Map<String, Cat> map)

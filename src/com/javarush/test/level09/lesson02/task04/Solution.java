@@ -19,55 +19,43 @@ public class Solution
     public static StackTraceElement[] method2()
     {
         //add your code here
-        method3();
-        return Thread.currentThread().getStackTrace();
-
+        return method3();
     }
 
     public static StackTraceElement[] method3()
     {
         //add your code here
-        method4();
-        return Thread.currentThread().getStackTrace();
-
+        return method4();
     }
 
     public static StackTraceElement[] method4()
     {
         //add your code here
-        method5();
-        return Thread.currentThread().getStackTrace();
-
+        return method5();
     }
 
     public static StackTraceElement[] method5()
     {
         //add your code here
-        method6();
-        return Thread.currentThread().getStackTrace();
-
+        return method6();
     }
 
     public static StackTraceElement[] method6()
     {
         //add your code here
-        method7();
-        return Thread.currentThread().getStackTrace();
-
+        return method7();
     }
 
     public static StackTraceElement[] method7()
     {
         //add your code here
-        method8();
-        return Thread.currentThread().getStackTrace();
+        return method8();
     }
 
     public static StackTraceElement[] method8()
     {
         //add your code here
-        method9();
-        return Thread.currentThread().getStackTrace();
+        return method9();
     }
 
     public static StackTraceElement[] method9()

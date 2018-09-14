@@ -12,11 +12,12 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
         //add your code here
-
-        String s = null;
-        String m = s.toLowerCase();
-
-        //add your code here
-
+        try {
+            String s = null;
+            String m = s.toLowerCase();
+        } catch (Exception e) {
+            //add your code here
+            System.out.println(e);
+        }
     }
 }

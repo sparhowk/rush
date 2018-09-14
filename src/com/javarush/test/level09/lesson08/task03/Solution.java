@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.nio.file.FileSystemException;
 
 /* Catching selective exceptions
-1. Find out what exceptions are thrown by the method BEAN.methodThrowExceptions.
+    1. Find out what exceptions are thrown by the method BEAN.methodThrowExceptions.
     2. The method processExceptions() should call the method BEAN.methodThrowExceptions and handle exceptions:
     2.1. if an exception FileSystemException occurs, then log it by calling the method BEAN.log and throw forward
     2.2. if an exception CharConversionException or any other IOException occurs, just log it by calling the method BEAN.log
@@ -23,11 +23,32 @@ public class Solution {
     public static StatelessBean BEAN = new StatelessBean();
 
     public static void main(String[] args) {
-        processExceptions();
+        try {
+
+            processExceptions();
+        } catch (Exception e)
+        {
+            BEAN.log(e);
+        }
     }
 
-    public static void processExceptions() {
-        BEAN.methodThrowExceptions();
+    public static void processExceptions() throws FileSystemException {
+        try
+        {
+            BEAN.methodThrowExceptions();
+        }
+        catch (CharConversionException e)
+        {
+            BEAN.log(e);
+        }
+        catch (FileSystemException e)
+        {
+            BEAN.log(e);
+            throw e;
+        }
+        catch (IOException e) {
+            BEAN.log(e);
+        }
     }
 
     public static class StatelessBean {

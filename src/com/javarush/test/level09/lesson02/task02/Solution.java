@@ -16,6 +16,7 @@ public class Solution
     {
         method2();
         //add your code here
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
 
     }
 
@@ -23,6 +24,7 @@ public class Solution
     {
         method3();
         //add your code here
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
 
     }
 
@@ -30,6 +32,7 @@ public class Solution
     {
         method4();
         //add your code here
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
 
     }
 
@@ -37,12 +40,12 @@ public class Solution
     {
         method5();
         //add your code here
-
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
     }
 
     public static String method5()
     {
         //add your code here
-
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
     }
 }

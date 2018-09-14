@@ -15,13 +15,16 @@ public class Solution
     {
         method2();
         //add your code here
-
+        StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+        return stackTraceElement;
     }
 
     public static StackTraceElement[] method2()
     {
         method3();
         //add your code here
+        StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+        return stackTraceElement;
 
     }
 
@@ -29,19 +32,22 @@ public class Solution
     {
         method4();
         //add your code here
-
+        StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+        return stackTraceElement;
     }
 
     public static StackTraceElement[] method4()
     {
         method5();
         //add your code here
-
+        StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+        return stackTraceElement;
     }
 
     public static StackTraceElement[] method5()
     {
         //add your code here
-
+        StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
+        return stackTraceElement;
     }
 }

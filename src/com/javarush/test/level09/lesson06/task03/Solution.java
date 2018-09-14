@@ -12,11 +12,12 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
         //add your code here
-
-        int[] m = new int[2];
-        m[8]= 5;
-
-        //add your code here
-
+        try {
+            int[] m = new int[2];
+            m[8] = 5;
+        } catch (Exception e) {
+            //add your code here
+            System.out.println(e);
+        }
     }
 }

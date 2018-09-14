@@ -15,7 +15,6 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        //add your code here
         try {
 
             HashMap<String, String> map = new HashMap<String, String>(null);
@@ -23,7 +22,6 @@ public class Solution
             map.remove(null);
         } catch (Exception e) {
             System.out.println(e);
-            //add your code here
         }
     }
 }

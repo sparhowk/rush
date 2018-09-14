@@ -16,9 +16,7 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        //add your code here
         try {
-
             method1();
         } catch (NullPointerException e)
         {
@@ -27,9 +25,6 @@ public class Solution
         {
             System.out.println(e);
         }
-
-        //add your code here
-
     }
 
     public static void method1() throws NullPointerException, ArithmeticException, FileNotFoundException, URISyntaxException
