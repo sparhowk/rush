@@ -40,13 +40,12 @@ public class Solution
             addresses.add(family);
         }
 
-        //read home number
-        int houseNumber = Integer.parseInt(reader.readLine());
+        String houseNumber = reader.readLine();
 
-        if (0 <= houseNumber && houseNumber < addresses.size())
-        {
-            String familySecondName = addresses.get(houseNumber);
-            System.out.println(familySecondName);
+        for (int i=0; i < addresses.size(); i++ ) {
+            if (addresses.get(i).equals(houseNumber)) {
+                System.out.println(addresses.get(i+1));
+            }
         }
     }
 }
