@@ -35,7 +35,7 @@ public class Solution
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int[] array = new int[30];
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 10; i++)
         {
             array[i] = Integer.parseInt(reader.readLine());
         }
@@ -49,5 +49,17 @@ public class Solution
     public static void sort(int[] array)
     {
         //add your code here
+        int smallNumber = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length-1; j++) {
+                if (smallNumber < array[j])
+                {
+                    smallNumber = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = smallNumber;
+                    System.out.println(array[j]);
+                }
+            }
+        }
     }
 }
