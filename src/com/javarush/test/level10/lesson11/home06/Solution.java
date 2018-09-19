@@ -16,22 +16,75 @@ public class Solution
         //Write here variables and constructors
         String name;
         String lastName;
-        String Surname;
+        String surname;
         int age;
         int weight;
         int height;
 
+        public Human() {
+            this.name = "Name";
+            this.lastName = "Last Name";
+            this.surname = null;
+            this.age = 0;
+            this.weight = 70;
+            this.height = 70;
+        }
+
         public Human(String name, String lastName, String surname, int age, int weight, int height) {
             this.name = name;
             this.lastName = lastName;
-            Surname = surname;
+            this.surname = surname;
             this.age = age;
             this.weight = weight;
             this.height = height;
         }
 
-        Human() {
+        public Human(String name) {
+            this.name = name;
+        }
+
+        public Human(String name, String lastName) {
+            this.name = name;
+            this.lastName = lastName;
+        }
+
+        public Human(String name, String lastName, int age) {
+            this.name = name;
+            this.lastName = lastName;
+            this.age = age;
+        }
+
+        public Human(String name, String lastName, int age, int weight) {
+            this.name = name;
+            this.lastName = lastName;
+            this.age = age;
+            this.weight = weight;
+        }
+
+        public Human(String name, String lastName, int age, int weight, int height) {
+            this.name = name;
+            this.lastName = lastName;
+            this.age = age;
+            this.weight = weight;
+            this.height = height;
+        }
+
+        public Human(int age) {
+            this.age = age;
+        }
+
+        public Human(int weight, int height) {
+            this.weight = weight;
+            this.height = height;
 
         }
+
+        public Human(int age, int weight, int height) {
+            this.age = age;
+            this.weight = weight;
+            this.height = height;
+        }
+
+
     }
 }

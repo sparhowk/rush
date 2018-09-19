@@ -1,5 +1,7 @@
 package com.javarush.test.level08.lesson08.task01;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,33 +9,15 @@ import java.util.Set;
 Create a set of strings (Set<String>), place into it 20 words beginning with «L».
 */
 
-public class Solution
-{
-    public static HashSet<String> createSet()
-    {
-        HashSet<String> list = new HashSet<String>();
-        list.add("01 - Лила");
-        list.add("02 - Люда");
-        list.add("03 - Лора");
-        list.add("04 - Люк");
-        list.add("05 - Ллейс");
-        list.add("06 - Лайка");
-        list.add("07 - Ложка");
-        list.add("08 - Лимон");
-        list.add("09 - Лопух");
-        list.add("10- Лизун");
+public class Solution {
+    public static Set<String>  createSet() {
+        HashSet<String> set = new HashSet<String>();
+        for (int i = 0; i < 20; i++) {
+            set.add("Л" + i);
+        }
+//        Set<String> set = new HashSet<String>(Arrays.asList("Let", "Leed", "Loaf", "Load", "Left", "Lord", "Lemon", "Loot", "Leave", "Leaf", "Love", "Live", "Lend", "Land", "Level", "Lamb", "Lair", "Liar", "Lies", "Lot"));
 
-        list.add("11 - Люс");
-        list.add("12 - Лама");
-        list.add("13 - Лаунч");
-        list.add("14 - Лира");
-        list.add("15 - Лада");
-        list.add("16 - Лампочка");
-        list.add("17 - Люстра");
-        list.add("18 - Лиса");
-        list.add("19 - Лань");
-        list.add("20 - Лорд");
-
-        return list;
+        return set;
     }
+
 }

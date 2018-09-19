@@ -19,11 +19,10 @@ public class Solution
 
     public static Map<String, Cat> createMap()
     {
-        //add your code here
         Map<String, Cat> cats = new HashMap<String, Cat>();
         String nameCat;
         for (int i = 0; i < 10; i++) {
-            nameCat = "Cats0" +i;
+            nameCat = "Cats0" + i;
             cats.put(nameCat, new Cat(nameCat));
         }
         return cats;
@@ -31,7 +30,6 @@ public class Solution
 
     public static Set<Cat> convertMapToSet(Map<String, Cat> map)
     {
-        //add your code here
         Set<Cat> valuesCatSet = new HashSet<Cat>();
         for (Map.Entry<String, Cat> names: map.entrySet()) {
             valuesCatSet.add(names.getValue());

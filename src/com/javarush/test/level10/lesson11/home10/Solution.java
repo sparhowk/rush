@@ -5,9 +5,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /* Five largest numbers
-Create a list of integers. Read 20 integers from the keyboard and fill a list with them. Create a method to extract numbers from the list safely:
+    Create a list of integers. Read 20 integers from the keyboard and fill a list with them.
+    Create a method to extract numbers from the list safely:
     int safeGetElement(ArrayList<Integer> list, int index, int defaultValue)
-    The method should return an element of the list by its index. If an exception occurs in this method, you need to catch it, and return the defaultValue.
+    The method should return an element of the list by its index.
+    If an exception occurs in this method, you need to catch it, and return the defaultValue.
 */
 
 public class Solution
@@ -30,7 +32,11 @@ public class Solution
 
     public static int safeGetElement(ArrayList<Integer> list, int index, int defaultValue)
     {
-      //add your code here
+        try {
+            return list.get(index);
+        } catch (Exception e)
+        {
+            return defaultValue;
+        }
     }
-
 }
