@@ -26,22 +26,23 @@ public class Solution
     public static void main(String[] args) throws IOException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        HashMap<Integer, String> idAndNames = new HashMap<Integer, String>();
+        HashMap<String, Integer> idAndNames = new HashMap<String, Integer>();
 
         while (true)
         {
-            String idString = reader.readLine();
-            if (idString.isEmpty()) break;
-
-            String name = reader.readLine();
-            if (name.equals("")) break;
-
-            int id = Integer.parseInt(idString);
-            idAndNames.put(id, name);
+            try {
+                int id = Integer.parseInt(reader.readLine());
+                String name = reader.readLine();
+                if(name.isEmpty()) break;
+                idAndNames.put(name, id);
+            } catch (Exception e)
+            {
+                break;
+            }
         }
 
-        for (Map.Entry<Integer, String> map: idAndNames.entrySet()) {
-            System.out.println(map.getKey() + " " + map.getValue());
+        for (Map.Entry<String, Integer> map: idAndNames.entrySet()) {
+            System.out.println(map.getValue() + " " + map.getKey());
         }
     }
 }
